@@ -17,7 +17,7 @@ import hotelproject.services.UserService;
 public class UsersController {
 	
 	@Autowired
-	private UserService userservice;
+	private UserService userService;
 	
 	// 회원 가입
 	@PostMapping("/signup")
@@ -40,13 +40,13 @@ public class UsersController {
             return ResponseEntity.badRequest().body("유효하지 않은 추천인입니다.");
         }
         
-        return UserService.registerUser(userVo);
+        return userService.registerUser(userVo);
     }
     
     // 로그인
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody UserVo loginDto) {
-        return UserService.authenticateUser(loginDto);
+        return userService.authenticateUser(loginDto);
     }
 
     @GetMapping("/")
