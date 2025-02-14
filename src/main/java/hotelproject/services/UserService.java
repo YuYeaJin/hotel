@@ -19,4 +19,7 @@ public interface UserService {
     
     // 로그인
     ResponseEntity<String> authenticateUser(UserVo loginVo);
+    
+    void chargePoint(String id, int point);
+
 }

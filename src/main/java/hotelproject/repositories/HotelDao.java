@@ -1,5 +1,5 @@
 package hotelproject.repositories;
 
-public interface HottelDao {
+public interface HotelDao {
 
 }

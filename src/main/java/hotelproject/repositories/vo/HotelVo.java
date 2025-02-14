@@ -1,5 +1,5 @@
 package hotelproject.repositories.vo;
 
-public class HottelVo {
+public class HotelVo {
 
 }

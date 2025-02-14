@@ -1,5 +1,5 @@
 package hotelproject.repositories;
 
-public class HottelDaoImpl {
+public class HotelDaoImpl {
 
 }

@@ -1,5 +1,5 @@
 package hotelproject.mappers;
 
-public interface HottelMapper {
+public interface HotelMapper {
 
 }

@@ -1,9 +1,12 @@
 package hotelproject.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import hotelproject.repositories.vo.UserVo;
@@ -13,7 +16,7 @@ import hotelproject.services.UserService;
 @RequestMapping("/users")
 public class UsersController {
 	
-	@Autowried
+	@Autowired
 	private UserService userservice;
 	
 	// 회원 가입
@@ -45,4 +48,18 @@ public class UsersController {
     public ResponseEntity<String> login(@RequestBody UserVo loginDto) {
         return UserService.authenticateUser(loginDto);
     }
+    
+	@GetMapping("/")
+	public String main() {
+		return "main"; // main.html 또는 main.jsp 파일을 찾아서 보여줍니다.
+	}
+
+
+
+	@PostMapping("/chargePoint")
+	public String chargePoint(@RequestParam("id") String id, @RequestParam("point") int point) {
+		userService.chargePoint(id, point);
+		return "redirect:/user/mypage";
+	}
+
 }

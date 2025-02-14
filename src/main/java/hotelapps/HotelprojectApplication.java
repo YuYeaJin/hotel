@@ -1,5 +1,5 @@
 package hotelapps;
 
-public class HottelprojectApplication {
+public class HotelprojectApplication {
 
 }
