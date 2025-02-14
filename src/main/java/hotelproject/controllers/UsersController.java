@@ -48,11 +48,12 @@ public class UsersController {
     public ResponseEntity<String> login(@RequestBody UserVo loginDto) {
         return UserService.authenticateUser(loginDto);
     }
-    
-	@GetMapping("/")
+
+    @GetMapping("/")
 	public String main() {
 		return "main"; // main.html 또는 main.jsp 파일을 찾아서 보여줍니다.
 	}
+
 
 
 
@@ -61,5 +62,4 @@ public class UsersController {
 		userService.chargePoint(id, point);
 		return "redirect:/user/mypage";
 	}
-
-}
+    

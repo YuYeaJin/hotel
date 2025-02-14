@@ -22,4 +22,5 @@ public interface UserService {
     
     void chargePoint(String id, int point);
 
+
 }
